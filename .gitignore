@@ -1,0 +1,37 @@
+# Binaries
+*.exe
+*.out
+*.test
+
+# Build artifacts
+/dist
+/build
+/bin
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Dependency management
+vendor/
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Test data
+*.coverprofile
+*.testresult
+*.tmp
+
+# Go module cache (only if you use `go mod vendor`)
+go.sum
+
+# Optional: ignore config overrides (if applicable)
+config/*.local.*
+.env
+.env.*
