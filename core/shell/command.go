@@ -8,7 +8,7 @@ import (
 )
 
 func StartShell() error {
-	cmd := exec.Command("docker", "exec", "-it", "python", "manage.py", "shell_plus")
+	cmd := exec.Command("docker", "exec", "-it", "street_ninja_web", "python", "manage.py", "shell_plus")
 	slog.Info("Starting Django shell inside Docker container", "container", types.Container.Web)
 	return utils.RunCommand(cmd)
 }

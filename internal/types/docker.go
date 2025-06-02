@@ -10,7 +10,7 @@ var Container = struct {
 	CeleryBeat   ContainerName
 	Bootstrap    ContainerName
 }{
-	Web:          ContainerName("web"),
+	Web:          ContainerName("street_ninja_web"),
 	Postgres:     ContainerName("db"),
 	Redis:        ContainerName("redis"),
 	CeleryWorker: ContainerName("celery-worker"),

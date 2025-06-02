@@ -13,7 +13,7 @@ var shellCmd = &cobra.Command{
 	Short: "Open Django shell_plus in the Docker container",
 	Long: `Starts an interactive Django shell_plus session inside the running container.
 
-	This wraps 'docker exec -it python manage.py shell_plus' so you don't have to type it manually`,
+	This wraps 'docker exec -it street_ninja_web python manage.py shell_plus' so you don't have to type it manually`,
 	Run: func(cmd *cobra.Command, args []string) {
 		err := shell.StartShell()
 		if err != nil {
