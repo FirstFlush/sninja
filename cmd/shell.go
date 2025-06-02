@@ -1,27 +1,25 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
-	"fmt"
+	"log/slog"
+	"os"
+	"sninja/core/shell"
 
 	"github.com/spf13/cobra"
 )
 
-// shellCmd represents the shell command
 var shellCmd = &cobra.Command{
 	Use:   "shell",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Open Django shell_plus in the Docker container",
+	Long: `Starts an interactive Django shell_plus session inside the running container.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	This wraps 'docker exec -it python manage.py shell_plus' so you don't have to type it manually`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("shell called")
+		err := shell.StartShell()
+		if err != nil {
+			slog.Error("Failed to run shell command", "error", err)
+			os.Exit(1)
+		}
 	},
 }
 
